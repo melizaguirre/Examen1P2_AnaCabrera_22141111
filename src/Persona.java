@@ -103,7 +103,7 @@ public abstract class Persona {
         this.tiene_Escuadron = tiene_Escuadron;
     }
     
-     (Persona P1, Persona P2);
+     abstract void findChance (Persona p1, Persona p2);
 
     @Override
     public String toString() {
