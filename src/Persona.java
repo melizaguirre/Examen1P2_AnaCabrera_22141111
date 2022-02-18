@@ -13,7 +13,7 @@ public abstract class Persona {
     private String poder;
     private String debilidad;
     private String escuandron;
-    private String TipoPersonaje;
+    private String Heroe_Villano;
     private Integer fuerza;
     private Integer agilidadFisica;
     private Integer agilidadMental;
@@ -103,7 +103,18 @@ public abstract class Persona {
         this.tiene_Escuadron = tiene_Escuadron;
     }
     
-     abstract void findChance (Persona p1, Persona p2);
+     abstract void find_Chance (Persona p1, Persona p2);
+     
+     
+     public boolean equals(Object obj) {
+		
+		if (obj instanceof Persona) {
+			Persona otraPersona = (Persona)obj;
+			return otraPersona.nombre.equals(nombre);
+		}
+		else
+			return false;
+	}
 
     @Override
     public String toString() {

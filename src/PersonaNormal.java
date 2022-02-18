@@ -13,7 +13,6 @@ public class PersonaNormal extends Persona {
     public PersonaNormal(String nombre, String poder, String debilidad, String escuandron, String TipoPersonaje, Integer fuerza, Integer agilidadFisica, Integer agilidadMental, boolean tiene_Escuadron) {
         super(nombre, poder, debilidad, escuandron, TipoPersonaje, fuerza, agilidadFisica, agilidadMental, tiene_Escuadron);
     }
-    
-  
-    void findChance(Persona p1, Persona p2)
+    void find_Chance(Persona p1, Persona p2){ 
+    }
 }
