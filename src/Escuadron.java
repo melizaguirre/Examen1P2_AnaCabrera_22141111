@@ -75,6 +75,10 @@ public class Escuadron {
     public void setMiembros(ArrayList<Persona> miembros) {
         this.miembros = miembros;
     }
-    
-    
+    public void Heroe (boolean TipoPersonaje){
+        TipoPersonaje = true; // HEROE
+    }
+    public void Villano (boolean TipoPersonaje){
+        TipoPersonaje = true; // HEROE
+    }
 }
