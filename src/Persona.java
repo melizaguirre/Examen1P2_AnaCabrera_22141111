@@ -13,7 +13,7 @@ public abstract class Persona {
     private String poder;
     private String debilidad;
     private String escuandron;
-    private String Heroe_Villano;
+    private String TipoPersonaje;
     private Integer fuerza;
     private Integer agilidadFisica;
     private Integer agilidadMental;
