@@ -31,6 +31,17 @@ public abstract class Persona {
         this.tiene_Escuadron = tiene_Escuadron;
     }
 
+    public Persona(String nombre, String poder, String debilidad, String escuandron, String TipoPersonaje, Integer fuerza, Integer agilidadFisica, Integer agilidadMental) {
+        this.nombre = nombre;
+        this.poder = poder;
+        this.debilidad = debilidad;
+        this.escuandron = escuandron;
+        this.TipoPersonaje = TipoPersonaje;
+        this.fuerza = fuerza;
+        this.agilidadFisica = agilidadFisica;
+        this.agilidadMental = agilidadMental;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -103,7 +114,7 @@ public abstract class Persona {
         this.tiene_Escuadron = tiene_Escuadron;
     }
     
-     abstract void find_Chance (Persona p1, Persona p2);
+     abstract void find_Chance();
      
      
      public boolean equals(Object obj) {

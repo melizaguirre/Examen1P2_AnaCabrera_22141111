@@ -33,6 +33,9 @@ public class PorAccidenteRadioactivo extends Persona{
     public void setTipoAccidento(String tipoAccidento) {
         this.tipoAccidento = tipoAccidento;
     }
+
+    @Override
+    void find_Chance() {}
     
     
 }

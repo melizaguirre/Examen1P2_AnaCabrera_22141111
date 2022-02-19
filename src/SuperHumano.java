@@ -23,5 +23,8 @@ public class SuperHumano extends Persona{
     public void setSuperPoder(String superPoder) {
         this.superPoder = superPoder;
     }
+
+    @Override
+    void find_Chance() {}
     
 }

@@ -47,12 +47,16 @@ import java.util.Scanner;
         int opc = sc.nextInt();
             switch (opc) {
                 case 1:
+                    CrearUniverso();
                     break;
                 case 2:
+                    ModificarUniverso();
                     break;
                 case 3:
+                    eliminarUniverso();
                     break;
                 case 4:
+                   listarUniversos();
                     break;
             }
         }
@@ -68,12 +72,16 @@ import java.util.Scanner;
         int opc = sc.nextInt();
             switch (opc) {
                 case 1:
+                    CrearEscuadron();
                     break;
                 case 2:
+                    ModificarEscuadron();
                     break;
                 case 3:
+                    eliminarEscuadron();
                     break;
                 case 4:
+                    listarEscuadron();
                     break;
                 case 5:
                     break;
@@ -91,12 +99,16 @@ import java.util.Scanner;
         int opc = sc.nextInt();
             switch (opc) {
                 case 1:
+                    CrearPersona();
                     break;
                 case 2:
+                    ModificarPersona();
                     break;
                 case 3:
+                    eliminarPersona();
                     break;
                 case 4:
+                    ListarPersona();
                     break;
             }
     }
@@ -117,15 +129,14 @@ import java.util.Scanner;
 		}
     }
         public static void ModificarUniverso(int pos){
-        System.out.print("Ingrese la posicion de ");
-        String nombreU= sc.next();
+        System.out.print("Ingrese el nombre del Universo a modificar");
+        String nombre= sc.next();
         for(Universo universo: uni){
-            if(universo!= null && universo.getNombreU()== nombreU){
-                
-                uni.get(0).getNombreU()=nombre;
-                System.out.print(" Universo creado ");	
+            if(universo!= null && universo.getNombreU()== nombre){
+                uni.add(universo);
+                System.out.print(" Universo Modificano");	
             }
-		System.out.print("Este universo ya existe");	
+		System.out.print("Este universo no  existe");	
 		}
     }
         public static void eliminarUniverso(){
@@ -162,13 +173,21 @@ import java.util.Scanner;
         squad.add(new Escuadron(nombre, lugar));
                
         }
+        public static void ModificarEscuadron(){
+            
+        }
         
-    
         public static void eliminarEscuadron(){
         System.out.print("Ingrese nombre del escuadron a eliminar: ");
          String nombre= sc.next();
-                squad.remove(sc.nextInt());
-           
+         for(Escuadron escuadron: squad){
+            if(escuadron!= null && escuadron.getNombre()== nombre){
+                squad.remove(escuadron);
+               
+            }else 
+                 System.out.print("No se ha encontrado este escuadron");	
+            
+         }
     }
         public static void listarEscuadron(){
         for (Escuadron escuadron : squad) {
@@ -176,24 +195,46 @@ import java.util.Scanner;
         }
     }
         
-        public static void CrearPersona(String nombre, String lugar, Persona lider){   
+        public static void CrearPersona(){   
         System.out.print("Ingrese el nombre: ");
         String nombre= sc.next();
         System.out.print("Ingrese el poder: ");
         String poder= sc.next();
         System.out.print("Ingrese la debilidad: ");
         String debilidad= sc.next();
-        squad.add(new Escuadron(nombre,lugar));
+        System.out.print("Ingrese el tipo de persona, 1 para Superheroes, 2 para Villanos ");
+        int TipoPer=0;
+        System.out.print("Ingrese la fuerza");
+        Integer fuerza =0;
+        System.out.print("Ingrese la agilidad fisica");
+        Integer agilidadFisica=0;
+        System.out.print("Ingrese la agilidad mental");
+        Integer agilidadMental=0;
+        String TipoPersonaje="";
+        if (TipoPer == 1){
+            TipoPersonaje="Heroe";
+        } else if (TipoPer==2){
+            TipoPersonaje="Villano";
+        }
+        miembros.add(new Persona(nombre, poder, debilidad, fuerza, agilidadFisica, agilidadMental, TipoPersonaje));
     }
         public static void eliminarPersonan(){
         System.out.print("Ingrese nombre del escuadron a eliminar: ");
          String nombre= sc.next();
-                squad.remove(sc.nextInt());
+                miembros.remove(sc.nextInt());
+                for(Persona persona: miembros){
+            if(persona!= null && persona.getNombre()== nombre){
+                miembros.remove(nombre);
+               
+            }else 
+                 System.out.print("No se ha encontrado este escuadron");	
+            
+         }
            
     }
         public static void listarPersonas(){
-        for (Escuadron escuadron : squad) {
-            System.out.println(escuadron.toString());
+        for (Persona per : miembros) {
+            System.out.println(per.toString());
         }
     }
         

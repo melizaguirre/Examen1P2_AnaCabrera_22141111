@@ -18,5 +18,9 @@ public class Mutante extends Persona{
         super(nombre, poder, debilidad, escuandron, TipoPersonaje, fuerza, agilidadFisica, agilidadMental, tiene_Escuadron);
         this.FactoresMutantes = FactoresMutantes;
     }
+
+    @Override
+    void find_Chance() {}
+ 
       
 }
