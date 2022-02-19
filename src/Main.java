@@ -12,8 +12,9 @@ import java.util.Scanner;
  *
  * @author BAC
  */
-public class Main{
+ public class Main{
  public static ArrayList<Persona> miembros;
+ public static ArrayList <Escuadron> squad;
  public static ArrayList<Universo> uni = new ArrayList();
     
     public static Scanner sc = new Scanner(System.in);
@@ -104,23 +105,24 @@ public class Main{
        
     
        }
-       public static void CrearUniverso(String nombreU){
+       public static void CrearUniverso(){
         System.out.print("Ingrese el nombre del universo a crear: ");
-        String nombre= sc.next();
+        String nombreU= sc.next();
         for(Universo universo: uni){
-            if(universo!= null && universo.getNombreU()== nombre){
-                uni.add(new Universo(nombreU));
-                System.out.print(" Universo creado ");	
+            if(universo!= null && universo.getNombreU()== nombreU){                
+                System.out.print(" Este Universo ya existe ");	
             }
-		System.out.print("Este universo ya existe");	
+		System.out.print("Universo creado");
+                uni.add(new Universo(nombreU));
 		}
     }
-        public static void ModificarUniverso(int pos, String nombreU){
-        System.out.print("Ingrese el nombre del universo a modificar ");
-        String nombre= sc.next();
+        public static void ModificarUniverso(int pos){
+        System.out.print("Ingrese la posicion de ");
+        String nombreU= sc.next();
         for(Universo universo: uni){
-            if(universo!= null && universo.getNombreU()== nombre){
-                uni.add(new Universo(nombreU));
+            if(universo!= null && universo.getNombreU()== nombreU){
+                
+                uni.get(0).getNombreU()=nombre;
                 System.out.print(" Universo creado ");	
             }
 		System.out.print("Este universo ya existe");	
@@ -128,10 +130,10 @@ public class Main{
     }
         public static void eliminarUniverso(){
         System.out.print("Ingrese nombre del universo a eliminar: ");
-         String nombre= sc.next();
+         String nombreU= sc.next();
          for(Universo universo: uni){
-            if(universo!= null && universo.getNombreU()== nombre){
-                uni.remove(sc.nextInt());
+            if(universo!= null && universo.getNombreU()== nombreU){
+                uni.remove(nombreU);
             }
             System.out.print("No se ha encontrado este universo");	
 		}
@@ -141,7 +143,60 @@ public class Main{
             System.out.println(universo.toString());
         }
     }
-       
+        
+        public static void CrearEscuadron(){   
+        System.out.print("Ingrese el nombre del escuadron a crear: ");
+        String nombre= sc.next();
+         System.out.print("Ingrese el lugar del escuadron a crear: ");
+        String lugar= sc.next();
+        System.out.print("Ingrese el lider del escuadron a crear: ");
+        Persona lider;
+        System.out.print("Ingrese el tipo de escuadron, 1 para Superheroes, 2 para Villanos ");
+        int TipoPer=0;
+        String TipoPersonaje="";
+        if (TipoPer == 1){
+            TipoPersonaje="Heroe";
+        } else if (TipoPer==2){
+            TipoPersonaje="Villano";
+        }
+        squad.add(new Escuadron(nombre, lugar));
+               
+        }
+        
+    
+        public static void eliminarEscuadron(){
+        System.out.print("Ingrese nombre del escuadron a eliminar: ");
+         String nombre= sc.next();
+                squad.remove(sc.nextInt());
+           
+    }
+        public static void listarEscuadron(){
+        for (Escuadron escuadron : squad) {
+            System.out.println(escuadron.toString());
+        }
+    }
+        
+        public static void CrearPersona(String nombre, String lugar, Persona lider){   
+        System.out.print("Ingrese el nombre: ");
+        String nombre= sc.next();
+        System.out.print("Ingrese el poder: ");
+        String poder= sc.next();
+        System.out.print("Ingrese la debilidad: ");
+        String debilidad= sc.next();
+        squad.add(new Escuadron(nombre,lugar));
+    }
+        public static void eliminarPersonan(){
+        System.out.print("Ingrese nombre del escuadron a eliminar: ");
+         String nombre= sc.next();
+                squad.remove(sc.nextInt());
+           
+    }
+        public static void listarPersonas(){
+        for (Escuadron escuadron : squad) {
+            System.out.println(escuadron.toString());
+        }
+    }
+        
        
 }
 

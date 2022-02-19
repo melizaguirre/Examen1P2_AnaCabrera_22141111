@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class Escuadron {
     String nombre;
     String  Lugar;
-    String base;
     Persona Lider;
     Boolean TipoPersonaje;
     ArrayList<Persona>miembros;
@@ -22,11 +21,16 @@ public class Escuadron {
     public Escuadron(String nombre, String Lugar, String base, Persona Lider, Boolean TipoPersonaje, ArrayList<Persona> miembros) {
         this.nombre = nombre;
         this.Lugar = Lugar;
-        this.base = base;
         this.Lider = Lider;
         this.TipoPersonaje = TipoPersonaje;
         this.miembros = miembros;
     }
+
+    public Escuadron(String nombre, String Lugar) {
+        this.nombre = nombre;
+        this.Lugar = Lugar;
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -42,14 +46,6 @@ public class Escuadron {
 
     public void setLugar(String Lugar) {
         this.Lugar = Lugar;
-    }
-
-    public String getBase() {
-        return base;
-    }
-
-    public void setBase(String base) {
-        this.base = base;
     }
 
     public Persona getLider() {
@@ -81,4 +77,11 @@ public class Escuadron {
     public void Villano (boolean TipoPersonaje){
         TipoPersonaje = true; // HEROE
     }
+
+    @Override
+    public String toString() {
+        return "Escuadron{" + "nombre=" + nombre + ", Lugar=" + Lugar + ", Lider=" + Lider + ", TipoPersonaje=" + TipoPersonaje + ", miembros=" + miembros + '}';
+    }
+    
+    
 }
