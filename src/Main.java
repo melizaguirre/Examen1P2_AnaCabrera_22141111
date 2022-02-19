@@ -13,7 +13,8 @@ import java.util.Scanner;
  * @author BAC
  */
 public class Main{
- public static ArrayList<Persona> listPersonas = new ArrayList();
+ public static ArrayList<Persona> miembros;
+ public static ArrayList<Universo> uni = new ArrayList();
     
     public static Scanner sc = new Scanner(System.in);
     
@@ -98,8 +99,49 @@ public class Main{
                     break;
             }
     }
+        
+        
        
     
        }
+       public static void CrearUniverso(String nombreU){
+        System.out.print("Ingrese el nombre del universo a crear: ");
+        String nombre= sc.next();
+        for(Universo universo: uni){
+            if(universo!= null && universo.getNombreU()== nombre){
+                uni.add(new Universo(nombreU));
+                System.out.print(" Universo creado ");	
+            }
+		System.out.print("Este universo ya existe");	
+		}
+    }
+        public static void ModificarUniverso(int pos, String nombreU){
+        System.out.print("Ingrese el nombre del universo a modificar ");
+        String nombre= sc.next();
+        for(Universo universo: uni){
+            if(universo!= null && universo.getNombreU()== nombre){
+                uni.add(new Universo(nombreU));
+                System.out.print(" Universo creado ");	
+            }
+		System.out.print("Este universo ya existe");	
+		}
+    }
+        public static void eliminarUniverso(){
+        System.out.print("Ingrese nombre del universo a eliminar: ");
+         String nombre= sc.next();
+         for(Universo universo: uni){
+            if(universo!= null && universo.getNombreU()== nombre){
+                uni.remove(sc.nextInt());
+            }
+            System.out.print("No se ha encontrado este universo");	
+		}
+    }
+        public static void listarUniversos(){
+        for (Universo universo : uni) {
+            System.out.println(universo.toString());
+        }
+    }
+       
+       
 }
 
